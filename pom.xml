@@ -45,10 +45,13 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
+			
+			<!-- https://mvnrepository.com/artifact/org.lucee/postgresql -->
+		<dependency>
+    		<groupId>org.lucee</groupId>
+    		<artifactId>postgresql</artifactId>
+   		<scope>runtime</scope>
 		</dependency>
-		
-		
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
