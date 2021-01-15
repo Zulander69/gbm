@@ -1,0 +1,162 @@
+<!doctype html>
+
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="zxx">
+<head th:replace="Plantilla/Template :: head">
+<meta charset="utf-8">
+
+
+</head>
+
+<body>
+	<header th:replace="Plantilla/Template :: header"></header>
+	<div class="breadcrumbs-area section-padding">
+		<div class="container" style="padding-top: 200px">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text-center text-white text-uppercase">
+
+						<ul>
+							<li><a th:href="@{/}">Home</a></li>
+
+						</ul>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="col-md-6 ">
+			<div class="registered-customers">
+				<div class="section-title text-uppercase mb-40">
+					<h4 th:text="${titulo}"></h4>
+				</div>
+				<form th:action="@{/views/socios/save}" th:object="${socio}"
+					method="post">
+					<div class="login-account p-30 box-shadow">
+						<div class="row">
+							<div class="col-sm-6">
+
+								<input type="text" th:field="*{nombre}" placeholder="Nombre "
+									id="nombre"> <small class="form-text text-danger"
+									th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">
+								</small>
+							</div>
+							<div class="col-sm-6">
+								<input type="text" th:field="*{apellido}" placeholder="Apellido"
+									id="apellido"> <small class="form-text text-danger"
+									th:if="${#fields.hasErrors('apellido')}"
+									th:errors="*{apellido}"> </small>
+								<div class="col-sm-12">
+									<select th:field="*{ciudad}" class="custom-select">
+										<option th:each="ciudad:${ciudades}" th:value="${ciudad.id}"
+											th:text="${ciudad.ciudad}"></option>
+
+									</select>
+								</div>
+
+
+							</div>
+
+							<div class="row">
+							<div class="col-sm-12">
+								<select th:field="*{categoria}" class="custom-select">
+									<option th:each="categoria:${categorias}"
+										th:value="${categoria.codigo}" th:text="${categoria.nombre}">
+
+									</option>
+
+								</select>
+							</div>
+							</div>
+
+
+
+
+							<small class="form-text text-danger"
+								th:if="${#fields.hasErrors('celular')}" th:errors="*{celular}">
+							</small>
+							<div class="col-sm-5 pl-0">
+								<input type="text" th:field="*{celular}" placeholder="Célular"
+									id="celular">
+
+							</div>
+							<div>
+
+								<input type="hidden" th:field="*{baner_empresa}">
+
+							</div>
+
+							<div>
+								<small class="form-text text-danger"
+									th:if="${#fields.hasErrors('empresa')}" th:errors="*{empresa}">
+								</small> <input type="text" th:field="*{empresa}"
+									placeholder="Nombre de la empresa" id="empresa">
+							</div>
+
+
+							<div>
+								<small class="form-text text-danger"
+									th:if="${#fields.hasErrors('direccion')}"
+									th:errors="*{direccion}"> </small> <input type="text"
+									th:field="*{direccion}" placeholder="Direccion" id="direccion">
+							</div>
+
+							<div>
+								<small class="form-text text-danger"
+									th:if="${#fields.hasErrors('detalle')}" th:errors="*{detalle}">
+								</small> <input type="text" th:field="*{detalle}"
+									placeholder="Detalle de la empresa 50 palabras" id="detalle"
+									style="height: 150px;">
+							</div>
+
+
+							<small class="form-text text-danger"
+								th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}">
+							</small> <input type="text" th:field="*{correo}"
+								placeholder="Email xxxx@xxxx.com" id="email"> <input
+								type="password" th:field="*{password}" placeholder="Password"
+								id="password"> <small class="form-text text-danger"
+								th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
+							</small> <input type="password" th:field="*{confirm}"
+								placeholder="Confirm Password" id="pass1">
+
+
+							<div class="checkbox">
+								<label class="mr-10"> <small> <input
+										type="checkbox" th:checked="${true}" th:field="*{cuenta}"
+										value=1 name="signup" id="cuenta"
+										style="height: 10px; width: 10px;">Acepto las
+										condicones!
+								</small>
+								</label>
+
+							</div>
+
+
+
+
+
+
+							<div class="row">
+								<div class="col-md-6">
+									<input type="submit" class="submit-btn mt-20" value="Guardar" />
+								</div>
+								<div class="col-md-6">
+									<input type="reset" class="submit-btn mt-20" />
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="Plantilla/Template :: footer"></footer>
+
+
+	<!-- /////////////////////////////////////////////////FIN DE CUERPO/////////////////////////////// -->
+
+
+</body>

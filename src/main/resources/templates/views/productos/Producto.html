@@ -1,0 +1,121 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="zxx">
+<head th:replace="Plantilla/Template :: head">
+<meta charset="utf-8">
+</head>
+
+ 
+
+    <body>
+   <!--  <img src="images/logo/cadme.png"/> -->
+    <!-- <div th:replace="Plantilla/BarraSocios :: barraS" ></div> -->
+    <!-- <header th:replace="Plantilla/Template :: header"style="position: static;"></header> -->
+    
+        <section id="cuerpo">
+          
+		<div class="container">
+	
+		
+		<div th:fragment="barraS" id="barraS" class="header-top-bar   ptb-1 navbar-fixed-top " 
+		style="background-color:transparent;">
+		
+		<div class="text-center" style="padding-top:0px;">
+		
+ 		</div>
+		
+		
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+<a href="/" class="btn btn-primary stretched-link">BACK</a>
+</div>
+</div>
+
+</div>
+
+		</div>
+    <!-- <header th:replace="Plantilla/Template :: header"style="position: static;"></header> -->
+    
+		<div class="container">
+	
+		
+		<div th:fragment="barraS" id="barraS" class="header-top-bar   ptb-1  " 
+		style="background-color:transparent;">
+		
+		<div class="text-center" style="padding-top:0px;" >
+		
+ 		<a th:href="@{/views/socios/socio/}+${socioid}" > <img  th:src="${logo}" class="" style="height: 100px; width: 70%;"/></a>
+		</div>
+		
+		
+
+
+</div>
+
+		</div>
+            	     
+        </section>
+        
+              <section id="page-content" class="page-wrapper">
+            <!-- Start Shop Full Grid View -->
+            <div class="product-details-area section-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="single-product-image">
+                                <div id="product-img-content">
+                                    <div id="my-tab-content" class="tab-content mb-30">
+                                        <div class="tab-pane b-img active" id="view1">
+                                            <a class="venobox" href="/images/product/product-details/1.jpg" data-gall="gallery" title=""><img src="/images/product/product-details/1.jpg" alt=""></a>
+                                        </div>
+                                       
+                                       
+                                      
+                                    </div>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="product-details-content">
+                                <div class="product-content text-uppercase">
+                                
+                                <div> <a title="Slim Shirt With Stretch" th:href="@{/views/socios/socio/}+${socioid}" th:text="${empresa}"></a></div>
+                                    <h3><a title="Slim Shirt With Stretch" href="#" th:text="${titulo}"></a></h3>
+                                    <div class="rating-icon pb-30 mt-10">
+                                   <i th:each="i : ${#numbers.sequence(1, calificacion)}" class="zmdi zmdi-star"></i> 
+                                    </div>
+                                    <div class="product-price pb-30">
+                                    PRECIO:
+                                        <span class="new-price"th:text="@{$}+${nuevop}"></span>
+                                        <span class="old-price"th:text="@{$}+${viejop}"></span>
+                                    </div>
+                                </div>
+                                <div class="product-view pb-30">
+                                    <h4 class="product-details-tilte text-uppercase">DETALLES</h4>
+                                    <p th:text="${detalle}"></p>
+                                </div>
+                        
+                                <div class="product-action-shop text-center mb-40">
+                                    
+                                    <a title="Add to cart" href="#">
+                                        <i class="zmdi zmdi-shopping-cart"></i>
+                                    </a>
+                                   
+                                </div>
+                             
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+        </section>
+
+
+
+
+ <footer th:replace="Plantilla/Template :: footer"></footer>
+
+    </body>
+
+</html>

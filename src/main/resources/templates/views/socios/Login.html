@@ -1,0 +1,83 @@
+<!doctype html>
+
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="zxx">
+<head th:replace="Plantilla/Template :: head">
+<meta charset="utf-8">
+
+
+</head>
+
+<body>
+	<header th:replace="Plantilla/Template :: header"></header>
+	<div class="breadcrumbs-area section-padding">
+		<div class="container" style="padding-top: 200px">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text-center text-white text-uppercase">
+
+						<ul>
+							<li><a th:href="@{/}">Home</a></li>
+
+						</ul>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="col-md-6 ">
+			<div class="registered-customers">
+				<div class="section-title text-uppercase mb-40">
+					<h4 th:text="${titulo}"></h4>
+				</div>
+				<form th:action="@{/views/socios/login}" th:object="${socio}"
+					method="post">
+					<div class="login-account p-30 box-shadow">
+						<div class="row">
+
+
+
+
+
+
+
+
+
+
+
+
+						
+							 <input type="text" placeholder="Email xxxx@xxxx.com" id="correo" name="correo">
+							  <input type="password" placeholder="Password"	id="password" name="password"> 
+							
+
+
+
+
+
+
+
+
+							<div class="row">
+								<div class="col-md-6">
+									<input type="submit" class="submit-btn mt-20" value="Guardar" />
+								</div>
+								<div class="col-md-6">
+									<input type="reset" class="submit-btn mt-20" />
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="Plantilla/Template :: footer"></footer>
+
+
+	<!-- /////////////////////////////////////////////////FIN DE CUERPO/////////////////////////////// -->
+
+
+</body>

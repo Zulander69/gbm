@@ -1,0 +1,95 @@
+<!doctype html>
+
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="zxx">
+<head th:replace="Plantilla/Template :: head">
+<meta charset="utf-8">
+
+
+</head>
+
+<body>
+	<header th:replace="Plantilla/Template :: header"></header>
+
+<div class="container"style="padding-top: 100px">
+  <h2></h2>
+  <p>ADMIN DE SOCIOS</p>                                                                                      
+  <div class="table-responsive">
+  
+  
+         
+  <table class="table">
+    <thead>
+    
+      <tr>
+        
+        <th>ID</th>
+        <th>NOMBRE</th>
+        <th>APELLIDO</th>
+        <th>DIRECCION</th>
+        <th>CORREO</th>
+        <th>PASSWORD</th>
+        <th>CELULAR</th>
+        <th>CUENTA</th>
+        <th>ESTADO</th>
+        <th>EMPRESA</th>
+        <th>DETALLE</th>
+        <th>SLIDER1</th>
+        <th>SLIDER2</th>
+        <th>LOGO</th>
+        <th>CIUDAD</th>
+        <th>CALIFICACION</th>
+        <th>BANEREMPRESA</th>
+        <th>BANERSLOGAN</th>
+        <th>ACCION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="so:${socios}" >
+        <td th:text="${so.id}"></td>
+        <td th:text="${so.nombre}"></td>
+        <td th:text="${so.apellido}"></td>
+        <td th:text="${so.direccion}"></td>
+        <td th:text="${so.correo}"></td>
+        <td th:text="${so.password}"></td>
+        <td th:text="${so.celular}"></td>
+        <td th:text="${so.cuenta}"></td>
+        <td th:text="${so.estado}"></td>
+        <td th:text="${so.empresa}"></td>
+        <td th:text="${so.detalle}"></td>
+        <td th:text="${so.slider1}"></td>
+        <td th:text="${so.slider2}"></td>
+        <td th:text="${so.logo}"></td>
+        <td th:text="${so.ciudad.ciudad}"></td>
+        <td th:text="${so.calificacion}"></td>
+        <td th:text="${so.baner_empresa}"></td>
+        <td th:text="${so.baner_slogan}"></td>
+  <!--      <td><img th:src="@{/images/product/} + ${so.baner_empresa}" ></td>
+        <td><img th:src="@{/images/product/} + ${so.baner_slogan}" ></td> -->
+        <td>  <div class="row">
+              <div class="col-md-6">
+              
+              <a class="btn btn-warning btn-sm" style="" th:href="@{/views/socios/editE/}+${so.id}">   </a>
+              </div>
+              <div class="col-md-6">
+              <a class="btn btn-danger btn-sm" th:href="@{/views/socios/delete/}+${so.id}"></a>
+              </div>
+              </div></td>
+              
+       
+
+        
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
+</div>
+
+
+ <footer th:replace="Plantilla/Template :: footer"></footer>
+        
+
+	<!-- /////////////////////////////////////////////////FIN DE CUERPO/////////////////////////////// -->
+
+	
+</body>

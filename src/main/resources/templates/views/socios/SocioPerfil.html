@@ -1,0 +1,122 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="zxx">
+<head th:replace="Plantilla/Template :: head">
+<meta charset="utf-8">
+</head>
+
+<body>
+   <!--  <img src="images/logo/cadme.png"/> -->
+    <!-- <div th:replace="Plantilla/BarraSocios :: barraS" ></div> -->
+    		
+		<div class="container">
+	
+		
+		<div th:fragment="barraS" id="barraS" class="header-top-bar   ptb-1 navbar-fixed-top " 
+		style="background-color:transparent;">
+		
+		<div class="text-center" style="padding-top:0px;">
+		
+ 		</div>
+		
+		
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+<a href="/" class="btn btn-primary stretched-link">BACK</a>
+</div>
+</div>
+
+</div>
+
+		</div>
+    <!-- <header th:replace="Plantilla/Template :: header"style="position: static;"></header> -->
+    
+		<div class="container">
+	
+		
+		<div th:fragment="barraS" id="barraS" class="header-top-bar   ptb-1  " 
+		style="background-color:transparent;">
+		
+		<div class="text-center" style="padding-top:0px;">
+		
+ 		 <img th:src="${socio.logo}" class="" style="height: 100px; width: 70%;"/>
+		</div>
+		
+		
+
+
+</div>
+
+		</div>
+		
+<nav class="" style="background: rgb(26, 191, 240);">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" th:text="${socio.Empresa}" ></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/views/socios/culo/">Inicio</a></li>
+      <li><a href="#">Mis Productos</a></li>
+      <li><a href="#">Editar</a></li>
+      
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container"style="padding-top: 20px">
+  <h2></h2>
+  <p style="font-weight: bold; ">MIS COMPRAS</p>                                                                                      
+  <div class="table-responsive">
+  
+  
+         
+  <table class="table">
+    <thead>
+    
+      <tr>
+        
+        <th>ID</th>
+        <th>NOMBRE</th>
+        <th>CANTIDAD</th>
+        <th>PRECIO</th>
+        <!-- <th>IMAGEN</th> -->
+   
+        <th>ACCION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="so:${socios}" >
+        <td th:text="${so.nombre}"></td>
+        <td th:text="${so.cantidad}"></td>
+        <td th:text="${so.precio}"></td>
+       <!--  <td th:text="${so.imagen}"></td> -->
+        
+  <!--      <td><img th:src="@{/images/product/} + ${so.baner_empresa}" ></td>
+        <td><img th:src="@{/images/product/} + ${so.baner_slogan}" ></td> -->
+        <td>  <div class="row">
+              <div class="col-md-6">
+              
+              <a class="btn btn-warning btn-sm" style="" th:href="@{/views/socios/editE/}+${so.id}">   </a>
+              </div>
+              <div class="col-md-6">
+              <a class="btn btn-danger btn-sm" th:href="@{/views/socios/delete/}+${so.id}"></a>
+              </div>
+              </div></td>
+              
+       
+
+        
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
+</div>
+
+
+
+ <footer th:replace="Plantilla/Template :: footer"></footer>
+
+    </body>
+
+</html>

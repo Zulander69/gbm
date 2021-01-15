@@ -1,0 +1,119 @@
+<!doctype html>
+
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="zxx">
+<head th:replace="Plantilla/Template :: head">
+<meta charset="utf-8">
+
+
+</head>
+
+<body>
+	   <!--  <img src="images/logo/cadme.png"/> -->
+    <!-- <div th:replace="Plantilla/BarraSocios :: barraS" ></div> -->
+    		
+		<div class="container">
+	
+		
+		<div th:fragment="barraS" id="barraS" class="header-top-bar   ptb-1 navbar-fixed-top " 
+		style="background-color:transparent;">
+		
+		<div class="text-center" style="padding-top:0px;">
+		
+ 		</div>
+		
+		
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+<a href="/" class="btn btn-primary stretched-link">BACK</a>
+</div>
+</div>
+
+</div>
+
+		</div>
+    <!-- <header th:replace="Plantilla/Template :: header"style="position: static;"></header> -->
+    
+		<div class="container">
+	
+		
+		<div th:fragment="barraS" id="barraS" class="header-top-bar   ptb-1  " 
+		style="background-color:transparent;">
+		
+		<div class="text-center" style="padding-top:0px;">
+		
+ 		 <img th:src="${logoSocio}" class="" style="height: 100px; width: 70%;"/>
+		</div>
+		
+		
+
+
+</div>
+
+		</div>
+		
+	<nav class="" style="background: gray;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" th:text="${idSocio}" ></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Mis Productos</a></li>
+      <li><a href="#">Editar</a></li>
+      
+    </ul>
+  </div>
+</nav>
+        <div class="container">
+          <div class="col-md-6 ">
+                            <div class="registered-customers">
+                                <div class="section-title text-uppercase mb-40">
+                                    <h4 th:text="${titulo}"></h4>
+                                    <h4 th:text="${subt}"></h4>
+                                </div>
+                               
+                                
+                                <form th:action="@{/views/productos/uploadMultiple}" th:object="${producto}" method="post" enctype="multipart/form-data">
+                                        <input type="hidden" th:field="*{id}">
+                                       <input type="hidden" th:field="*{detalle}">
+                                       <input type="hidden" th:field="*{nombre}">
+                                      <!-- <input type="hidden" th:field="*{logo}">
+                                       <input type="hidden" th:field="*{baner_empresa}">
+                                       <input type="hidden" th:field="*{baner_slogan}">
+                                       <input type="hidden" th:field="*{empresa}"> -->
+                                     										
+  										<input type="hidden" th:field="*{baner_producto}">
+  										<div class="form-group">
+    									<label for="exampleFormControlFile1">Banner_Producto 100x100</label>
+    									<input type="file" name="files" class="form-control-file" id="s1">
+  										</div>
+  										
+  										<input type="hidden" th:field="*{imagen_producto}">
+  										<div class="form-group">
+    									<label for="exampleFormControlFile1">Imagen_Producto 300x500</label>
+    									<input type="file" name="files" class="form-control-file" id="s2">
+  										</div>
+  										
+  										    <div class="row">
+                                            <div class="col-md-6">
+                                                <input  type="submit" class="submit-btn mt-20" value="Subir"/>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="reset" class="submit-btn mt-20"/>
+                                            </div>
+                                        </div>
+                                        </form>
+                                
+                                
+                                
+                                
+                            </div>
+                            </div>
+  						 </div>
+                            <footer th:replace="Plantilla/Template :: footer"></footer>
+        
+
+	<!-- /////////////////////////////////////////////////FIN DE CUERPO/////////////////////////////// -->
+
+	
+</body>

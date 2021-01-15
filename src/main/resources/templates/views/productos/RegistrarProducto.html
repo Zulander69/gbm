@@ -1,0 +1,155 @@
+<!doctype html>
+
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="zxx">
+<head th:replace="Plantilla/Template :: head">
+<meta charset="utf-8">
+
+
+</head>
+
+<body>
+	   <!--  <img src="images/logo/cadme.png"/> -->
+    <!-- <div th:replace="Plantilla/BarraSocios :: barraS" ></div> -->
+    		
+		<div class="container">
+	
+		
+		<div th:fragment="barraS" id="barraS" class="header-top-bar   ptb-1 navbar-fixed-top " 
+		style="background-color:transparent;">
+		
+		<div class="text-center" style="padding-top:0px;">
+		
+ 		</div>
+		
+		
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+<a href="/" class="btn btn-primary stretched-link">BACK</a>
+</div>
+</div>
+
+</div>
+
+		</div>
+    <!-- <header th:replace="Plantilla/Template :: header"style="position: static;"></header> -->
+    
+		<div class="container">
+	
+		
+		<div th:fragment="barraS" id="barraS" class="header-top-bar   ptb-1  " 
+		style="background-color:transparent;">
+		
+		<div class="text-center" style="padding-top:0px;">
+		
+ 		 <img th:src="${logoSocio}" class="" style="height: 100px; width: 70%;"/>
+		</div>
+		
+		
+
+
+</div>
+
+		</div>
+		
+	<nav class="" style="background: rgb(26, 191, 240);">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"  ></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Mis Productos</a></li>
+      <li><a href="#">Editar</a></li>
+      
+    </ul>
+  </div>
+</nav>
+        <div class="container">
+          <div class="col-md-6 ">
+                            <div class="registered-customers">
+                                <div class="section-title text-uppercase mb-40">
+                                    <h4 th:text="${titulo}"></h4>
+                                </div>
+                                <form th:action="@{/views/productos/save}" th:object="${producto}" method="post">
+                                    <div class="login-account p-30 box-shadow">
+                                        <div class="row">
+                                            
+                                             <p th:text="${idSocio}"></p>
+                                              <!-- <input type="hidden"  th:field="*{socio.id}" th:value="@{105}"> -->
+                                               <input type="hidden"  name="socio.id" th:value="${idSocio}">
+                                              <!-- <input type="hidden"  th:field="*{id}"> -->
+                                             <div class="col-sm-10">
+                                             <label>Nombre:</label>
+                                                <input  type="text" th:field="*{nombre}" placeholder="Nombre " id="nombre">
+                                                 <small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}"
+                                        				th:errors="*{nombre}">
+                                        		</small>
+                                            </div>
+                                            <div class="col-sm-12">
+                                            <label>Detalle:</label>
+                                                <input type="text" th:field="*{detalle}" placeholder="Detalla y vende tu Producto" id="detalle" style="height: 200px;">
+                                  				 <small class="form-text text-danger" th:if="${#fields.hasErrors('detalle')}"
+                                        				th:errors="*{detalle}">
+                                        		</small>
+                                        		 </div>
+                                        <div class="col-sm-12" >
+                                                
+                                              <label>Categoria:</label>
+                                                    <select th:field="*{categoria}" class="custom-select">
+                                                   
+                                                    <option th:each="categoria:${categorias}"
+                                                    th:value="${categoria.codigo}"
+                                                    th:text="${categoria.nombre}">
+                                                    </option>
+                                                  
+                                                </select>
+                                                
+                                               
+                                                  
+                                                
+                                            </div>
+                                           
+                                        
+                                       
+                                        <small class="form-text text-danger" th:if="${#fields.hasErrors('precio')}"
+                                        				th:errors="*{precio}">
+                                        		</small>
+                                        <div class="col-sm-5">
+                                        	<label>Precio:</label>
+                                        	<input type="text" th:field="*{precio}" placeholder="Precio" id="precio">
+                                        	 
+                                        </div>   
+                                        <!-- <div>
+                                        
+                                        <input type="hidden" th:field="*{baner_empresa}">
+                                         
+                                        </div> -->
+                                        
+                                        
+                                       
+                                        
+                                        
+                                        
+                                        
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input  type="submit" class="submit-btn mt-20" value="Guardar"/>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="reset" class="submit-btn mt-20"/>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    </div>
+                                </form>
+                            </div>
+                            </div>
+  						 </div>
+                            <footer th:replace="Plantilla/Template :: footer"></footer>
+        
+
+	<!-- /////////////////////////////////////////////////FIN DE CUERPO/////////////////////////////// -->
+
+	
+</body>
